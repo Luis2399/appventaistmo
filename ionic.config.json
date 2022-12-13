@@ -1,0 +1,7 @@
+{
+  "name": "appventaistmo",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}

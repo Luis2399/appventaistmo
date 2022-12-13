@@ -1,0 +1,26 @@
+[
+  {
+    "imagen":"assets/slides/imagen-1.jpg",
+    "titulo":"Bienvenido",
+    "bold":"Somos la mejor",
+    "texto":"tienda de pinturas automotrizes, gracias a tu preferencia y confianza!!",
+    "boton":"Omitir",
+    "path":""
+  },
+  {
+    "imagen":"assets/slides/imagen-2.jpg",
+    "titulo":"Tienda Movil",
+    "bold":"Tu tienda en tu bolsillo",
+    "texto":"gracias a la aplicación no tienes que hacer filas y llega hasta tu casa!!",
+    "boton":"Omitir",
+    "path":""
+  },
+  {
+    "imagen":"assets/slides/imagen-3.jpg",
+    "titulo":"Tus compras al instante",
+    "bold":"Compra productos",
+    "texto":"con mejores precios y de buena calidad!",
+    "boton":"Continuar",
+    "path":"/clientes2"
+  }
+]

@@ -1,0 +1,56 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button text="Regresar" defaultHref="/"></ion-back-button>
+    </ion-buttons>
+    <ion-title>Control Clientes</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+  <form [formGroup]="formulario" novalidate mode="md">
+  <ion-item counter="true">
+    <ion-label position="floating">Nombre:</ion-label>
+    <ion-input formControlName="nombre" maxlength="20" type="text"></ion-input>
+  </ion-item>
+  
+  <ion-item id="custom-item" counter="true">
+    <ion-label position="floating">Apellido:</ion-label>
+    <ion-input formControlName="apellido" maxlength="20" type="text"></ion-input>
+  </ion-item>
+
+  <ion-item id="custom-item" counter="true">
+    <ion-label position="floating">Email:</ion-label>
+    <ion-input formControlName="email" maxlength="25" type="email"></ion-input>
+  </ion-item>
+
+  <ion-item id="custom-item" counter="true">
+    <ion-label position="floating">Telefono:</ion-label>
+    <ion-input formControlName="telefono" maxlength="10" minlength="10" type="number"></ion-input>
+  </ion-item>
+  
+  <ion-item id="custom-item" counter="true">
+    <ion-label position="floating">Calle:</ion-label>
+    <ion-input formControlName="calle" maxlength="25" type="text"></ion-input>
+  </ion-item>
+
+  <ion-item id="custom-item" counter="true">
+    <ion-label position="floating">CP:</ion-label>
+    <ion-input formControlName="CP" maxlength="5" type="number"></ion-input>
+  </ion-item>
+
+  <ion-item id="custom-item" counter="true">
+    <ion-label position="floating">Num. Exterior:</ion-label>
+    <ion-input formControlName="numExt" maxlength="10" type="number"></ion-input>
+  </ion-item>
+
+  <ion-item id="custom-item" counter="true">
+    <ion-label position="floating">Num. Interior:</ion-label>
+    <ion-input formControlName="numInt" maxlength="10" type="number"></ion-input>
+  </ion-item>
+
+  <ion-button expand="block" [disabled]="formulario.invalid" (click)="guardarCliente()">Confirmar Compra</ion-button>
+</form>
+
+</ion-content>

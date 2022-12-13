@@ -1,0 +1,23 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button text="Regresar" defaultHref="/"></ion-back-button>
+    </ion-buttons>
+    <ion-title>pedidos</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+   <ion-item *ngFor="let pedido of pedidos">
+    <ion-thumbnail slot="start">
+      <img alt="Silhouette of mountains" src="https://www.tiendapsm.mx/pub/media/catalog/product/cache/ebb0c7cdf0615c13bac3367e1cfeb956/a/t/atrrcbip.jpg" />
+    </ion-thumbnail>
+    <ion-label>
+      <h1>${{pedido.total}}</h1>
+      <p>Fecha de compra: {{pedido.fecha}}</p>
+     
+    </ion-label>
+  </ion-item>
+
+</ion-content>

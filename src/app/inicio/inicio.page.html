@@ -1,0 +1,21 @@
+
+<ion-header>
+  <ion-toolbar>
+    <ion-title style="text-align: center" color="primary" >TIENDA ISTMO</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+
+<ion-content>
+  <ion-slides pager="true" [options]="slideOpts">
+    <ion-slide *ngFor="let slide of slides">
+      <img [src]="slide.imagen" alt="{{ slide.imagen }}"/>
+      <h2>{{ slide.titulo }}</h2>
+      <p>
+        <b>{{ slide.bold }}</b>
+        {{ slide.texto }}
+      </p>
+      <ion-button (click)="redirige(slide.path)" fill="clear">{{ slide.boton }} <ion-icon slot="end" name="arrow-forward"></ion-icon></ion-button>
+    </ion-slide>
+  </ion-slides>
+</ion-content>

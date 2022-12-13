@@ -1,0 +1,59 @@
+<ion-app>
+
+  <ion-menu side="start" menuId="first" contentId="principal">
+    <ion-header>
+      <ion-toolbar color="primary">
+        <ion-title>Menu principal</ion-title>
+      </ion-toolbar>
+    </ion-header>
+    <ion-content>
+      <ion-list>
+
+        
+        <ion-avatar slot="start">
+          <ion-img src="https://image.made-in-china.com/155f0j00ZrdYUpqMfScv/Yatu-Easicoat-Auto-Paint.jpg"></ion-img>
+        </ion-avatar>
+        <ion-menu-toggle>
+        <ion-item button routerLink="/productos">productos</ion-item>
+      </ion-menu-toggle>
+
+
+
+        <ion-avatar slot="start">
+          <ion-img
+            src="https://us.123rf.com/450wm/alekseyvanin/alekseyvanin1704/alekseyvanin170403663/76699411-vector-de-icono-de-usuario-ilustraci%C3%B3n-de-logotipo-s%C3%B3lido-de-perfil-pictograma-aislado-en-blanco.jpg?ver=6">
+          </ion-img>
+        </ion-avatar>
+        <ion-menu-toggle>
+        <ion-item routerLink="/clientes2">clientes</ion-item>
+      </ion-menu-toggle>
+
+
+        <ion-avatar slot="start">
+          <ion-img src="https://i.pinimg.com/736x/5c/61/84/5c61840474f5e4f69ca6a03507c2a569.jpg"></ion-img>
+        </ion-avatar>
+        <ion-menu-toggle>
+        <ion-item routerLink="/pedidos">pedidos</ion-item>
+      </ion-menu-toggle>
+
+        <ion-avatar slot="start">
+          <ion-img
+            src="https://static.vecteezy.com/system/resources/previews/004/798/846/original/shopping-cart-logo-or-icon-design-vector.jpg">
+          </ion-img>
+        </ion-avatar>
+        <ion-menu-toggle>
+        <ion-item routerLink="/carritos">carritos</ion-item>
+      </ion-menu-toggle>
+
+
+      </ion-list>
+    </ion-content>
+    <ion-footer>
+      <ion-toolbar color="primary">
+        <h1 class="title" style="text-align: center">Alumno: Luis Enrique</h1>
+      </ion-toolbar>
+    </ion-footer>
+  </ion-menu>
+
+  <ion-router-outlet id="principal"></ion-router-outlet>
+</ion-app>

@@ -1,0 +1,74 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button text="Regresar" defaultHref="/"></ion-back-button>
+    </ion-buttons>
+    <ion-title>productos</ion-title>
+    <ion-buttons slot="end">
+      <ion-button id="open-modal" expand="block" (click)="obtenerTotal()">
+        <ion-icon name="cart-outline"></ion-icon>
+        <ion-badge color="danger">{{contador}}</ion-badge>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true" class="ion-padding">
+
+  <ion-item *ngFor="let producto of productos">
+    <ion-thumbnail slot="start">
+      <img alt="Silhouette of mountains" src="https://www.axalta.com/content/axalta_mx/es_ES/productos/repintado-automotriz/esmaltes/_jcr_content/parMainContent/layoutcontainer/parMainContentLayout/col4_53395191/parMainContent/mediateaser.axFitIn.mediaTeaser_desktop_x1.jpg/1645561711823/botes-y-latas-Cromacryl_Esmalte_Acrilico_Uretano.jpg" />
+    </ion-thumbnail>
+    <ion-label>
+      <h1>{{producto.nombre}}</h1>
+      <h4>${{producto.precio}}</h4>
+      <p>Cantidad de existencia: {{producto.stock}}</p>
+    </ion-label>
+    <ion-button slot="end" (click)="agregarAlCarrito(producto)" [disabled]="checarID(producto.idproducto)">
+      <ion-icon name="bag-add-outline"></ion-icon>
+    </ion-button>
+  </ion-item>
+
+  <ion-modal #modal trigger="open-modal">
+    <ng-template>
+      <ion-content>
+        <ion-toolbar>
+          <ion-title>Carrito de Compras</ion-title>
+          <ion-buttons slot="end">
+            <ion-button color="light" (click)="modal.dismiss()">Cerrar</ion-button>
+          </ion-buttons>
+        </ion-toolbar>
+        <ion-list>
+          <ion-item *ngFor="let producto2 of productosCarrito">
+            <ion-thumbnail slot="start">
+              <img alt="Silhouette of mountains" src="https://www.axalta.com/content/axalta_mx/es_ES/productos/repintado-automotriz/esmaltes/_jcr_content/parMainContent/layoutcontainer/parMainContentLayout/col4_53395191/parMainContent/mediateaser.axFitIn.mediaTeaser_desktop_x1.jpg/1645561711823/botes-y-latas-Cromacryl_Esmalte_Acrilico_Uretano.jpg" />
+            </ion-thumbnail>
+            <ion-label>
+              <h2>{{producto2.nombre}}</h2>
+              <p>${{producto2.precio}}</p>
+              <p>cantidad de la compra: {{producto2.cantidadCarrito}}</p>
+              <p>subtotal: ${{producto2.subtotalCarrito}}</p>
+            </ion-label>
+            <ion-button slot="end" color="danger" (click)="eliminarProducto(producto2)">
+              <ion-icon name="close-outline"></ion-icon>
+            </ion-button>
+          </ion-item>
+        </ion-list>
+        <ion-list>
+          <ion-item>
+            <ion-select placeholder="Seleccione al cliente" [(ngModel)]="idCliente"><!--Usamos un ngmodel para obtener el value del select seleccionado y lo almacenamos en idCliente-->
+              <ion-select-option *ngFor="let cliente of clientes" value={{cliente.idcliente}}>{{cliente.nombre}}</ion-select-option>
+            </ion-select>
+          </ion-item>
+        </ion-list>
+        <h3>Precio total: ${{total}}</h3>
+        <ion-button expand="block" [disabled]="check()" (click)="confirmarCompra()">Confirmar Compra</ion-button>
+        <p>
+          <ion-text color="warning"><ion-icon name="warning"></ion-icon></ion-text>
+          Una vez confirmada la compra ya no se podra revertir</p>
+      </ion-content>
+    </ng-template>
+  </ion-modal>
+
+
+</ion-content>
