@@ -72,7 +72,10 @@ export class ControlClientesPage implements OnInit {
     cliente.cp = this.formulario.value.CP;
     cliente.numeroext = this.formulario.value.numExt;
     cliente.numeroint = this.formulario.value.numInt;
-    //console.log(cliente);
+    console.log(cliente);
+
+
+
     this.service.postCliente(cliente).subscribe((res: any) => {
       console.log(res);
     });

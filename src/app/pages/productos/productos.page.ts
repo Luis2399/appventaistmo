@@ -136,6 +136,13 @@ export class ProductosPage implements OnInit {
     this.obtenerTotal();
   }
 
+  eliminarProductoAPI(idproducto: string) {
+    this.service.deleteProducto(idproducto).subscribe((res: any) => {
+      console.log(res);
+      window.location.reload();
+    })
+  }
+
   checarID(id: number) {
     let productos = this.carrito.obtenerProductos();
 
@@ -148,10 +155,14 @@ export class ProductosPage implements OnInit {
   }
 
   check() {
-    if (this.total === 0 || this.idCliente === 0){//checar si selecciono cliente y si tiene un total valido
-      return true;//si no hay valor correcto en ambas variables significa que una de las dos falta entonces desactivame el boton
+    if (this.total === 0 || this.idCliente === 0){// esto hace checar si selecciono cliente y si tiene un total valido
+      return true;//esto si no hay valor correcto en ambas variables significa que una de las dos falta entonces desactivame el boton
     }
     return false;
+  }
+
+  recargar() {
+    window.location.reload();
   }
 
 }

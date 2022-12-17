@@ -1,0 +1,32 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button text="Regresar" defaultHref="/"></ion-back-button>
+    </ion-buttons>
+    <ion-title>Control Productos</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+  <form [formGroup]="formulario" novalidate mode="md">
+  <ion-item counter="true">
+    <ion-label position="floating">Nombre:</ion-label>
+    <ion-input formControlName="nombre" maxlength="20" type="text"></ion-input>
+  </ion-item>
+  
+  <ion-item id="custom-item" counter="true">
+    <ion-label position="floating">Precio:</ion-label>
+    <ion-input formControlName="precio" maxlength="20" type="number"></ion-input>
+  </ion-item>
+
+  <ion-item id="custom-item" counter="true">
+    <ion-label position="floating">Stock:</ion-label>
+    <ion-input formControlName="stock" maxlength="25" type="number"></ion-input>
+  </ion-item>
+
+  <ion-button *ngIf="idproducto == '' || idproducto == null" expand="block" [disabled]="formulario.invalid" (click)="guardarProducto()">Nuevo Producto</ion-button>
+  <ion-button *ngIf="idproducto != '' && idproducto != null" expand="block" [disabled]="formulario.invalid" (click)="editarProducto()">Editar Producto</ion-button>
+</form>
+
+</ion-content>

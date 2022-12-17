@@ -50,6 +50,14 @@ const routes: Routes = [
   {
     path: 'control-clientes',
     loadChildren: () => import('./pages/control-clientes/control-clientes.module').then( m => m.ControlClientesPageModule)
+  },
+  {
+    path: 'control-productos',
+    loadChildren: () => import('./pages/control-productos/control-productos.module').then( m => m.ControlProductosPageModule)
+  },
+  {
+    path: 'control-productos/:idproducto',
+    loadChildren: () => import('./pages/control-productos/control-productos.module').then( m => m.ControlProductosPageModule)
   }
 
 ];
